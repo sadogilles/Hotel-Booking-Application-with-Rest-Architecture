@@ -84,6 +84,26 @@ namespace ClientConsoleApp
                 Console.WriteLine("Hotel Rating!");
                 Console.WriteLine(h.Rating);
 
+
+                List<int> prices = new List<int>();
+
+                //compute price
+                foreach (Room r in h.Rooms)
+                {
+
+                    prices.Add(r.Price);
+
+                    Console.WriteLine("price:", r.Price);
+
+                }
+
+                var minPrice = prices.Min();
+                var maxPrice = prices.Max();
+
+                String priceRange = minPrice.ToString() + "-" + maxPrice.ToString();
+
+                listHotelGrid["priceRange", row].Value = priceRange;
+
             }
 
             numberOfClick++;
@@ -134,7 +154,8 @@ namespace ClientConsoleApp
             }
             else
             {
-                client.HotelTown = townTextBox.Text;
+                client.HotelTown = townTextBox.Text.ToLower();
+                Console.WriteLine(client.HotelName);
                 client.ArrivalDate = ArrivalDateTextBox.Text;
                 client.DepartureDate = depatureDateTextBox.Text;
                 client.MinPrice = Int32.Parse(minimumPriceTextBox.Text);
@@ -177,6 +198,25 @@ namespace ClientConsoleApp
                     listHotelGrid["country", row].Value = h.Country.ToString();
                     listHotelGrid["chooseHotel", row].Value = submitButton;
 
+
+                    List<int> prices = new List<int>();
+                   
+                    //compute price
+                    foreach (Room r in h.Rooms)
+                    {
+
+                        prices.Add(r.Price);
+
+                        Console.WriteLine("price:",r.Price);
+
+                    }
+
+                    var minPrice = prices.Min();
+                    var maxPrice = prices.Max();
+
+                    String priceRange = minPrice.ToString() + "-" + maxPrice.ToString();
+
+                    listHotelGrid["priceRange", row].Value = priceRange;
                 }
 
             }

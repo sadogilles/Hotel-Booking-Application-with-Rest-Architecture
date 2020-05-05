@@ -340,10 +340,10 @@
             // 
             // groupBox2
             // 
-            this.groupBox2.Controls.Add(this.ClientInformationLayoutPanel);
-            this.groupBox2.Controls.Add(this.roomDataGridView);
             this.groupBox2.Controls.Add(this.tableHotelInformation);
             this.groupBox2.Controls.Add(this.listHotelGrid);
+            this.groupBox2.Controls.Add(this.ClientInformationLayoutPanel);
+            this.groupBox2.Controls.Add(this.roomDataGridView);
             this.groupBox2.Location = new System.Drawing.Point(22, 363);
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.Size = new System.Drawing.Size(1484, 452);
